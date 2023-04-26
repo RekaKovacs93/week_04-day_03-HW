@@ -12,3 +12,14 @@ def save(author):
     author.id = id
     return author
 
+def select(id):
+    author = None
+    sql = "SELECT * FROM authors WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        author = Author(result['name'])
+    return author
+

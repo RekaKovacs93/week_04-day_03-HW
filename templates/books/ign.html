@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 id = "logo"><a href ="/">Book Store</a></h1>
+
+  {# <div class="book-container"> #}
+{% for book in books %}
+  {{book.title}}
+{% endfor %}
+
+     {# <div class="task">
+    <div class="content">
+      {{book.author.name}}
+      <div class="description">
+        <a href="/tasks/{{task.id}}">{{task.description}}</a>
+        <span class="duration">{{task.duration}} mins</span>
+      </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/tasks/{{task.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+
+        {% if task.completed == True %}
+          <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+        {% else %}
+          <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+        {% endif %} #}
+      </div>
+    </div>
+  </div>
+    {# <div class="book">
+      <form action="/remove/{{ loop.index0 }}" method="post">
+        <input type="hidden" name="delete" value="{{ books.index(book) }}">
+        <button type="submit">X</button>
+      </form>
+      <a href ="/book/{{books.index(book)}}">
+      <img src= "/static/{{book.cover}}.jpeg"> #}
+      <h2>{{ book.author }} : {{ book.title }}</h2>
+      {# </a>
+      <h3><i>{{ book.genre }}</i></h3>
+      <form action="/" method="post">
+      <label for="available">Available</label>
+      <input type="checkbox" name="available" value="{{ book.checked_in }}">
+      </form>        
+    </div> #}
+    
+    </div>
+  </div>
+
+    <h1 class="add">Add Books</h1>
+<form action="/" method="post" id="main">
+    <label for="author">Author's name</label>
+    <input type="text" name="author" id="author">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+    <label for="genre">Genre</label>
+    <input type="text" name="genre" id="genre">
+    <label for="image">Upload Image</label>
+    <input type="file" id="book_image" name="image">
+    <input type="submit" value="Add Book">
+</form>
+{# <form action="/remove/<book>" method="post">
+    <label for="book">Select Book</label>
+    <select name="book" id="book">
+{% for book in books %}
+    <option>{{ book.title }}, {{ book.author }}, {{ book.genre }}</option>
+{% endfor %}</select> 
+   <input type="submit" value="Remove Book"> #}
+  {# <label for="author">Author's name</label>
+    <input type="text" name="author" id="author">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+    <label for="genre">Genre</label>
+    <input type="text" name="genre" id="genre">
+    <input type="submit" value="Remove Book">#}
+
+  </form>
+{% endblock %}
