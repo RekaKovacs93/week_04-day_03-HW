@@ -6,13 +6,24 @@
   <div class="book-container">
   {% for book in books%}
   <div class="book">
-  <h2>{{book.title}} by {{ book.author.name }}</h2>
+  <h2><a href="books/{{ book.author.id }}">{{ book.author.name }} :<br></a><a href="books/{{ book.id }}"> {{book.title}}</a></h2>
   <form action="books/{{ book.id }}/delete" method="post">
         <input type="hidden" name="delete" value="{{ book.id }}">
         <button type="submit">X</button>
       </form>
     </a>
-
+  </div>
+  
   {% endfor %}
 </div>
+  <h1 class="add">Add Books</h1>
+  <form action="/" method="post" id="main">
+      <label for="author">Author's name</label>
+      <input type="text" name="author" id="author">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title">
+      <label for="genre">Pubdate</label>
+      <input type="text" name="pubdate" id="pubdate">
+      <input type="submit" value="Add Book">
+  </form>
 {% endblock %}

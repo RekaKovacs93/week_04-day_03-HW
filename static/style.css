@@ -52,11 +52,31 @@
     margin-top: 50px
   }
   
+  form label{
+    margin: 5px 10px 5px 0px;
+  }
+  
+  form input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  
+  form input[type=submit] {
+    padding: 10px 20px;
+    background-color: #4d4d4d ;
+    border: 1px solid #ddd;
+    color: white;
+    
+  }
   
   .book-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content:left;
+    justify-content:space-around;
     
   }
   
@@ -66,12 +86,21 @@
     background-color: #4d4d4d;
     padding: 10px;
     margin:20px;
-    width: 70px;
+    width: 180px;
+    justify-content: center;
     text-align: center;
+    position: relative;
     
-  } */
+  } 
   
   
+  form {
+    margin: 20px;
+    display: flex;
+    flex-flow: row wrap;
+  
+
+  }
   
   h2 {
     color: lightgrey;
@@ -97,5 +126,14 @@
 
   #delete{
     text-align: right;
+  }
+  button{
+    background-color: #4d4d4d ;
+    border: none;
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
   }
   

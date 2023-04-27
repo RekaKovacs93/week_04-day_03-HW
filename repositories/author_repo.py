@@ -20,6 +20,6 @@ def select(id):
 
     if results:
         result = results[0]
-        author = Author(result['name'])
+        author = Author(result['name'], result['id'])
     return author
 

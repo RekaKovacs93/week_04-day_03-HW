@@ -10,6 +10,7 @@ CREATE TABLE books (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     pubdate INT,
+    image VARBINARY(MAX)
     author_id  INT NOT NULL REFERENCES authors(id)
 );
 
